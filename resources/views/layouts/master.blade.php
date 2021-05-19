@@ -43,6 +43,7 @@
                         <ul>
                             <li class="{{ Route::is('index') ? 'active' : '' }}"><a href="{{ route('index') }}">Home</a></li>
                             <li class="{{ Route::is('aboutus') ? 'active' : '' }}"><a href="{{ route('aboutus') }}">About us</a></li>
+                            <li class="{{ Route::is('contactus') ? 'active' : '' }}"><a href="{{ route('contactus') }}">Contact us</a></li>
                             @auth
                             <li class="{{ Route::is('profile') ? 'active' : '' }}"><a href="#">My Profile</a>
                                 <ul class="dropdown">

@@ -1,5 +1,8 @@
 <?php
 
+use App\Mail\ContactUs;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +18,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('index');
 Route::view('/about-us', 'about-us')->name('aboutus');
-Route::get('/my-profile', function(){
-    return view('profile');
-})->name('profile');
+Route::view('/contact-us', 'contact-us')->name('contactus');
+Route::view('/my-profile', 'profile')->name('profile');
+Route::post('/contact-us', function(Request $request){
+    $data = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'message' => $request->message
+    ];
+    // dd($data);
+    Mail::to('activitar@activitar.com')->send(new ContactUs($data));
+
+    if(!Mail::failures()){
+        return redirect()->route('contactus')->with('success', 'harixul');
+    }
+});
 
 

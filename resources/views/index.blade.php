@@ -17,7 +17,8 @@
                             @guest
                             <h2>Join Us Now</h2>
                             <h1>FITNESS & SPORT</h1>
-                            <a href="{{ route('login') }}" class="primary-btn">Login</a>
+                            <a href="{{ route('register') }}" class="primary-btn">Register</a>
+                            <a href="{{ route('login') }}" class="primary-btn" style="background: linear-gradient(to right, #e16521, #e4381C);">Login</a>
                             @endguest
                         </div>
                     </div>
