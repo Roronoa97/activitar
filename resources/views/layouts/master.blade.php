@@ -45,9 +45,9 @@
                             <li class="{{ Route::is('aboutus') ? 'active' : '' }}"><a href="{{ route('aboutus') }}">About us</a></li>
                             <li class="{{ Route::is('contactus') ? 'active' : '' }}"><a href="{{ route('contactus') }}">Contact us</a></li>
                             @auth
-                            <li class="{{ Route::is('profile') ? 'active' : '' }}"><a href="#">My Profile</a>
+                            <li class="{{ Route::is('profile.index') ? 'active' : '' }}"><a href="#">My Profile</a>
                                 <ul class="dropdown">
-                                    <li><a href="{{ route('profile') }}">View Profile</a></li>
+                                    <li><a href="{{ route('profile.index') }}">View Profile</a></li>
                                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">Log Out</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

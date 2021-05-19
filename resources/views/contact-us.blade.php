@@ -42,6 +42,7 @@
                                 <div class="col-lg-12">
                                     <textarea placeholder="Message" name="message"></textarea>
                                     <button type="submit" class="c-btn">Send Message</button>
+                                    <small class="text-white font-italic">Please setup the Mail Configuration in .env before send it</small>
                                 </div>
                             </div>
                         </form>

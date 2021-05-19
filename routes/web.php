@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index')->name('index');
 Route::view('/about-us', 'about-us')->name('aboutus');
 Route::view('/contact-us', 'contact-us')->name('contactus');
-Route::view('/my-profile', 'profile')->name('profile');
+Route::resource('/profile', App\Http\Controllers\ProfileController::class);
 Route::post('/contact-us', function(Request $request){
     $data = [
         'name' => $request->name,
@@ -28,9 +28,9 @@ Route::post('/contact-us', function(Request $request){
     ];
     // dd($data);
     Mail::to('activitar@activitar.com')->send(new ContactUs($data));
-
+    
     if(!Mail::failures()){
-        return redirect()->route('contactus')->with('success', 'harixul');
+        return redirect()->route('contactus')->with('success', 'Congratulations, Please check your email service (Mailtrap or Mailgun or anything');
     }
 });
 
